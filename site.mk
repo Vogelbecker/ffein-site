@@ -26,7 +26,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-mesh-vpn-fastd \
 	gluon-radvd \
 	gluon-setup-mode \
-	ffac-status-page-api \
+	#ffac-status-page-api \
 	gluon-status-page \
 	iwinfo \
 	iptables \
@@ -152,7 +152,7 @@ endif
 
 DEFAULT_GLUON_RELEASE := 0.2.1
 
-DEFAULT_GLUON_CHECKOUT := v2016.2.1
+DEFAULT_GLUON_CHECKOUT := v2016.2.3
 
 ##	GLUON_RELEASE
 #		call make with custom GLUON_RELEASE flag, to use your own release version scheme.
@@ -174,5 +174,4 @@ GLUON_REGION ?= eu
 GLUON_LANGS ?= en de
 
 # Select ath10k Firmware for adhoc
-
 GLUON_ATH10K_MESH ?= ibss
