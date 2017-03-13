@@ -26,7 +26,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-mesh-vpn-fastd \
 	gluon-radvd \
 	gluon-setup-mode \
-	#ffac-status-page-api \
+	ffac-status-page-api \
 	gluon-status-page \
 	iwinfo \
 	iptables \
@@ -150,7 +150,7 @@ endif
 #			opkg compare-versions "$1" '>>' "$2"
 #		to decide if a version is newer or not.
 
-DEFAULT_GLUON_RELEASE := 0.2.1
+DEFAULT_GLUON_RELEASE := 0.2.2
 
 DEFAULT_GLUON_CHECKOUT := v2016.2.3
 
