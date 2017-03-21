@@ -150,9 +150,9 @@ endif
 #			opkg compare-versions "$1" '>>' "$2"
 #		to decide if a version is newer or not.
 
-DEFAULT_GLUON_RELEASE := 0.2.2
+DEFAULT_GLUON_RELEASE := 0.3.1
 
-DEFAULT_GLUON_CHECKOUT := v2016.2.3
+DEFAULT_GLUON_CHECKOUT := v2016.2.4
 
 ##	GLUON_RELEASE
 #		call make with custom GLUON_RELEASE flag, to use your own release version scheme.
