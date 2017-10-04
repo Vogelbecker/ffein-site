@@ -28,6 +28,7 @@ GLUON_SITE_PACKAGES := \
 	gluon-setup-mode \
 	gluon-status-page-api \
 	gluon-status-page \
+	eulenfunk-dns-cache \
 	iwinfo \
 	iptables \
 	haveged
@@ -35,27 +36,27 @@ GLUON_SITE_PACKAGES := \
 # add offline ssid only if the target has wifi device
 ifeq ($(GLUON_TARGET),ar71xx-generic)
 GLUON_SITE_PACKAGES += \
-	#gluon-ssid-changer
+	gluon-ssid-changer
 endif
 
 ifeq ($(GLUON_TARGET),ar71xx-mikrotik)
 GLUON_SITE_PACKAGES += \
-	#gluon-ssid-changer
+	gluon-ssid-changer
 endif
 
 ifeq ($(GLUON_TARGET),ar71xx-nand)
 GLUON_SITE_PACKAGES += \
-	#gluon-ssid-changer
+	gluon-ssid-changer
 endif
 
 ifeq ($(GLUON_TARGET),mpc85xx-generic)
 GLUON_SITE_PACKAGES += \
-	#gluon-ssid-changer
+	gluon-ssid-changer
 endif
 
 ifeq ($(GLUON_TARGET),ramips-rt305x)
 GLUON_SITE_PACKAGES += \
-	#gluon-ssid-changer
+	gluon-ssid-changer
 endif
 
 # add addition network drivers and usb stuff only to targes where disk space does not matter.
