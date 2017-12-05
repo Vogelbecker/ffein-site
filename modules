@@ -1,4 +1,4 @@
-GLUON_SITE_FEEDS="ssidchanger eulenfunk ffrgb ffhb"
+GLUON_SITE_FEEDS="ssidchanger eulenfunk ffrgb ffhb ffsaar"
 PACKAGES_EULENFUNK_REPO=https://github.com/eulenfunk/packages.git
 PACKAGES_EULENFUNK_BRANCH=v2016.2.x
 PACKAGES_EULENFUNK_COMMIT=73dd05aa7a37a5187c497931f26548647debe6a5
@@ -13,3 +13,8 @@ PACKAGES_FFRGB_COMMIT=c9e25956356918d1e91f7e2b8fc716f8b07a789f
 
 PACKAGES_FFHB_REPO=git://github.com/FreifunkBremen/ffhb-packages.git
 PACKAGES_FFHB_COMMIT=8067f787e5272fd7b959be997fc420777bc46414
+
+PACKAGES_FFSAAR_REPO='https://github.com/freifunk-saar/gluon-ffsaar.git' 
+PACKAGES_FFSAAR_COMMIT=00b2ec0f91025b729b4b79cdae981f64a4894ade
+PACKAGES_FFSAAR_BRANCH=master
+
