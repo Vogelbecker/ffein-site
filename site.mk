@@ -16,19 +16,19 @@ GLUON_SITE_PACKAGES := \
 	gluon-config-mode-contact-info \
 	gluon-ebtables-filter-multicast \
 	gluon-ebtables-filter-ra-dhcp \
-	gluon-luci-admin \
-	gluon-luci-autoupdater \
-	gluon-luci-portconfig \
-	gluon-luci-private-wifi \
-	gluon-luci-wifi-config \
+	gluon-web-admin \
+	gluon-web-autoupdater \
+#	gluon-luci-portconfig \
+	gluon-web-private-wifi \
+	gluon-web-wifi-config \
 	gluon-next-node \
 	gluon-neighbour-info \
-	gluon-mesh-vpn-fastd \
+	gluon-mesh-vpn-tunneldigger \
 	gluon-radvd \
 	gluon-setup-mode \
-	gluon-status-page-api \
+#	gluon-status-page-api \
 	gluon-status-page \
-	eulenfunk-dns-cache \ 
+#	eulenfunk-dns-cache \ 
 	respondd-module-airtime \
 	iwinfo \
 	iptables \
@@ -154,7 +154,7 @@ endif
 
 DEFAULT_GLUON_RELEASE := 0.4.0
 
-DEFAULT_GLUON_CHECKOUT := v2016.2.7
+DEFAULT_GLUON_CHECKOUT := v2017.1.x
 
 ##	GLUON_RELEASE
 #		call make with custom GLUON_RELEASE flag, to use your own release version scheme.
