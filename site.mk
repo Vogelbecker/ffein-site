@@ -7,6 +7,7 @@
 GLUON_SITE_PACKAGES := \
 	gluon-mesh-batman-adv-15 \
 	gluon-respondd \
+	gluon-alfred \
 	gluon-autoupdater \
 	gluon-config-mode-core \
 	gluon-config-mode-hostname \
@@ -18,17 +19,14 @@ GLUON_SITE_PACKAGES := \
 	gluon-ebtables-filter-ra-dhcp \
 	gluon-web-admin \
 	gluon-web-autoupdater \
-#	gluon-luci-portconfig \
 	gluon-web-private-wifi \
 	gluon-web-wifi-config \
-	gluon-next-node \
 	gluon-neighbour-info \
 	gluon-mesh-vpn-tunneldigger \
 	gluon-radvd \
 	gluon-setup-mode \
-#	gluon-status-page-api \
 	gluon-status-page \
-#	eulenfunk-dns-cache \ 
+	gluon-dns-cache \ 
 	respondd-module-airtime \
 	iwinfo \
 	iptables \
