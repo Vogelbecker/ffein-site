@@ -1,20 +1,17 @@
-GLUON_SITE_FEEDS="ssidchanger fflip"
+GLUON_SITE_FEEDS="ssidchanger fflip ffmuc eulenfunk"
 
 PACKAGES_SSIDCHANGER_REPO=https://github.com/freifunk-nord/gluon-ssid-changer.git
 PACKAGES_SSIDCHANGER_COMMIT=222b96a30259a03ca8ecdb173d9d326077a6efec
 PACKAGES_SSIDCHANGER_BRANCH=2018.1.x
 
-PACKAGES_FFHB_REPO=git://github.com/FreifunkBremen/ffhb-packages.git
-PACKAGES_FFHB_COMMIT=8067f787e5272fd7b959be997fc420777bc46414
-
-PACKAGES_FFRL_REPO=https://github.com/ffrl/ffrl-packages.git
-PACKAGES_FFRL_COMMIT=cba563a2e088e67750cd4b19f248546ed8e63e77
-PACKAGES_FFRL_BRANCH=master
-
-PACKAGES_FFMS_REPO=https://github.com/FreiFunkMuenster/packages-ffms.git
-PACKAGES_FFMS_COMMIT=d58ef2824a4ff7b5f18ba24e9dc270108b4c9b57
-PACKAGES_FFMS_BRANCH=v2017.1.x
-
 PACKAGES_FFLIP_REPO=https://github.com/freifunklippe/packages.git
 PACKAGES_FFLIP_COMMIT=cdaadcc89ca26810ee8ffd737fa5573da4843d09
 PACKAGES_FFLIP_BRANCH=master
+
+PACKAGES_FFMUC_REPO=https://github.com/freifunkMUC/gluon-packages.git
+PACKAGES_FFMUC_COMMIT=403526c6881f62d7258292b9b6170dc4124c4078
+PACKAGES_FFMUC_BRANCH=main
+
+PACKAGES_EULENFUNK_REPO=https://github.com/ffac/eulenfunk-packages.git
+PACKAGES_EULENFUNK_COMMIT=25bdb8ef28531ab4ec6a978a5356c3c07518a826
+PACKAGES_EULENFUNK_BRANCH=v2019.1.x
