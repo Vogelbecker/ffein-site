@@ -3,122 +3,136 @@
 #               specify gluon/openwrt packages to include here
 #               The gluon-mesh-batman-adv-* package must come first because of the dependency resolution
 
+GLUON_FEATURES := \
+        autoupdater \
+        authorized-keys \
+        config-mode-geo-location \
+        ebtables-filter-multicast \
+        ebtables-filter-ra-dhcp \
+        ebtables-limit-arp \
+        mesh-batman-adv-15 \
+        mesh-vpn-tunneldigger \
+        radv-filterd \
+        radvd \
+        respondd \
+        setup-mode \
+        status-page \
+        web-advanced \
+        web-private-wifi \
+        weeklyreboot \
+        web-wizard
+#alte packete
+#GLUON_SITE_PACKAGES := \#
+#       respondd-module-airtime \
+#       gluon-alfred \
+#       iwinfo \
+#       iptables \
+#       gluon-rsk-config \
+#       gluon-rsk-block-mesh
+
 GLUON_SITE_PACKAGES := \
-        gluon-mesh-batman-adv-15 \
-        gluon-authorized-keys \
-        gluon-respondd \
-        respondd-module-airtime \
-        gluon-alfred \
-        gluon-autoupdater \
-        gluon-config-mode-hostname \
-        gluon-config-mode-autoupdater \
-        gluon-config-mode-mesh-vpn \
-        gluon-config-mode-geo-location \
-        gluon-config-mode-contact-info \
-        gluon-ebtables-filter-multicast \
-        gluon-ebtables-filter-ra-dhcp \
-        gluon-ebtables-limit-arp \
-        gluon-web-admin \
         gluon-web-autoupdater \
-        gluon-web-network \
-        gluon-web-private-wifi \
-        gluon-web-wifi-config \
-        gluon-neighbour-info \
-        gluon-mesh-vpn-tunneldigger \
-        gluon-radvd \
-        gluon-status-page \
+        ffho-autoupdater-wifi-fallback \
+        haveged \
         iwinfo \
-        iw-full \
-        iptables \
+        ecdsautils \
+        gluon-ssid-changer \
+        respondd-module-airtime \
         gluon-rsk-config \
-        gluon-rsk-block-mesh \
-        haveged
-# add offline ssid only if the target has wifi device
-ifeq ($(GLUON_TARGET),ar71xx-generic)
-GLUON_SITE_PACKAGES += \
-        gluon-ssid-changer
-endif
+        gluon-rsk-block-mesh
 
-ifeq ($(GLUON_TARGET),ar71xx-mikrotik)
-GLUON_SITE_PACKAGES += \
-        gluon-ssid-changer
-endif
-
-ifeq ($(GLUON_TARGET),ar71xx-nand)
-GLUON_SITE_PACKAGES += \
-        gluon-ssid-changer
-endif
-
-ifeq ($(GLUON_TARGET),mpc85xx-generic)
-GLUON_SITE_PACKAGES += \
-        gluon-ssid-changer
-endif
-
-ifeq ($(GLUON_TARGET),ramips-rt305x)
-GLUON_SITE_PACKAGES += \
-        gluon-ssid-changer
-endif
-
-# add addition network drivers and usb stuff only to targes where disk space does not matter.
-ifeq ($(GLUON_TARGET),x86-generic)
-GLUON_SITE_PACKAGES += \
+# support the USB stack
+USB_PACKAGES_BASIC := \
         kmod-usb-core \
-        kmod-usb-ohci-pci \
         kmod-usb2 \
-        kmod-usb-hid \
+        kmod-usb-hid
+
+# FAT32 Support for USB
+USB_PACKAGES_STORAGE := \
+        block-mount \
+        kmod-fs-ext4 \
+        kmod-fs-vfat \
+        kmod-usb-storage  \
+        kmod-usb-storage-extras  \
+        blkid  \
+        swap-utils  \
+        kmod-nls-cp1250  \
+        kmod-nls-cp1251  \
+        kmod-nls-cp437  \
+        kmod-nls-cp775  \
+        kmod-nls-cp850  \
+        kmod-nls-cp852  \
+        kmod-nls-cp866  \
+        kmod-nls-iso8859-1  \
+        kmod-nls-iso8859-13  \
+        kmod-nls-iso8859-15  \
+        kmod-nls-iso8859-2  \
+        kmod-nls-koi8r  \
+        kmod-nls-utf8
+
+USB_PACKAGES_NET := \
         kmod-usb-net \
         kmod-usb-net-asix \
+        kmod-usb-net-asix-ax88179 \
+        kmod-usb-net-cdc-eem \
+        kmod-usb-net-cdc-ether \
+        kmod-usb-net-cdc-mbim \
+        kmod-usb-net-cdc-ncm \
+        kmod-usb-net-cdc-subset \
         kmod-usb-net-dm9601-ether \
-        kmod-igb
+        kmod-usb-net-hso \
+        kmod-usb-net-huawei-cdc-ncm \
+        kmod-usb-net-ipheth \
+        kmod-usb-net-kalmia \
+        kmod-usb-net-kaweth \
+        kmod-usb-net-mcs7830 \
+        kmod-usb-net-pegasus \
+        kmod-usb-net-qmi-wwan \
+        kmod-usb-net-rndis \
+        kmod-usb-net-rtl8150 \
+        kmod-usb-net-rtl8152 \
+        kmod-usb-net-sierrawireless \
+        kmod-usb-net-smsc95xx \
+        kmod-mii \
+        kmod-nls-base
+
+NIC_PACKAGES_NET := \
+        kmod-sky2 \
+        kmod-r8169 \
+        kmod-forcedeth \
+        kmod-8139too
+
+TOOLS_PACKAGES := \
+        bash \
+        tcpdump \
+        vnstat \
+        iperf \
+        iperf3 \
+        socat \
+        usbutils
+
+
+ifeq ($(GLUON_TARGET),x86-generic)
+GLUON_SITE_PACKAGES += \
+        kmod-usb-hid \
+        ip-full \
+        $(NIC_PACKAGES_NET) \
+        $(USB_PACKAGES_BASIC) \
+        $(USB_PACKAGES_STORAGE) \
+        $(USB_PACKAGES_NET) \
+        $(TOOLS_PACKAGES)
 endif
 
 ifeq ($(GLUON_TARGET),x86-64)
 GLUON_SITE_PACKAGES += \
-        kmod-usb-core \
-        kmod-usb-ohci-pci \
-        kmod-usb2 \
         kmod-usb-hid \
-        kmod-usb-net \
-        kmod-usb-net-asix \
-        kmod-usb-net-dm9601-ether \
-        kmod-igb
+        ip-full \
+        $(NIC_PACKAGES_NET) \
+        $(USB_PACKAGES_BASIC) \
+        $(USB_PACKAGES_STORAGE) \
+        $(USB_PACKAGES_NET) \
+        $(TOOLS_PACKAGES)
 endif
-
-# Add offline ssid, network drivers and usb stuff to raspberry and banana pi images
-
-ifeq ($(GLUON_TARGET),brcm2708-bcm2708)
-GLUON_SITE_PACKAGES += \
-        gluon-ssid-changer \
-        kmod-usb-core \
-        kmod-usb2 \
-        kmod-usb-hid \
-        kmod-usb-net \
-        kmod-usb-net-asix \
-        kmod-usb-net-dm9601-ether
-endif
-
-ifeq ($(GLUON_TARGET),brcm2708-bcm2709)
-GLUON_SITE_PACKAGES += \
-        gluon-ssid-changer \
-        kmod-usb-core \
-        kmod-usb2 \
-        kmod-usb-hid \
-        kmod-usb-net \
-        kmod-usb-net-asix \
-        kmod-usb-net-dm9601-ether
-endif
-
-ifeq ($(GLUON_TARGET),sunxi)
-GLUON_SITE_PACKAGES += \
-        gluon-ssid-changer \
-        kmod-usb-core \
-        kmod-usb2 \
-        kmod-usb-hid \
-        kmod-usb-net \
-        kmod-usb-net-asix \
-        kmod-usb-net-dm9601-ether
-endif
-
 
 ##      DEFAULT_GLUON_RELEASE
 #               version string to use for images
@@ -126,9 +140,9 @@ endif
 #                       opkg compare-versions "$1" '>>' "$2"
 #               to decide if a version is newer or not.
 
-DEFAULT_GLUON_RELEASE := 0.7.6
+DEFAULT_GLUON_RELEASE := 2023.0.1
 
-DEFAULT_GLUON_CHECKOUT := v2018.2.x
+DEFAULT_GLUON_CHECKOUT := v2023.1
 
 ##      GLUON_RELEASE
 #               call make with custom GLUON_RELEASE flag, to use your own release version scheme.
@@ -151,3 +165,9 @@ GLUON_LANGS ?= en de
 
 # Select ath10k Firmware for adhoc
 GLUON_ATH10K_MESH ?= 11s
+
+GLUON_DEPRECATED ?= upgrade
+
+# Set default branch for building custom images
+GLUON_AUTOUPDATER_BRANCH ?= experimental
+GLUON_AUTOUPDATER_ENABLED ?= 1
