@@ -1,0 +1,109 @@
+features({
+	'autoupdater',
+	'authorized-keys',
+	'ebtables-filter-multicast',
+	'ebtables-filter-ra-dhcp',
+	'ebtables-source-filter',
+	'iptables-clamp-mss-to-pmtu',
+	'mesh-batman-adv-15',
+	'radv-filterd',
+	'respondd',
+	'status-page',
+	'web-wizard',
+	'web-advanced',
+	'web-private-wifi',
+	'weeklyreboot',
+	'config-mode-domain-select',
+	'config-mode-geo-location',
+	})
+
+packages({
+	'ffac-ssid-changer',
+	'gluon-web-autoupdater',
+	'-gluon-config-mode-mesh-vpn',
+	'gluon-web-mesh-vpn-fastd',
+})
+
+features({
+	'mesh-vpn-fastd-l2tp',
+})
+
+-- https://gluon.readthedocs.io/en/latest/dev/hardware.html#device-class-definition
+if not device_class('tiny') then
+	features({
+		'config-mode-geo-location-osm',
+		'wireless-encryption-wpa3',
+		'web-cellular',
+	})
+	packages({
+		'gluon-web-logging',
+		'iwinfo',
+		'respondd-module-airtime',
+	})
+end
+
+-- additional packages for some hardware
+if target('x86', 'generic') or target('x86', 'legacy') or target('x86', '64') then
+	packages {
+		'kmod-usb-core',
+		'kmod-usb2',
+		'kmod-usb-hid',
+		'block-mount',
+		'kmod-fs-ext4',
+		'kmod-fs-vfat',
+		'kmod-usb-storage',
+		'kmod-usb-storage-extras',
+		'blkid',
+		'swap-utils',
+		'kmod-nls-cp1250',
+		'kmod-nls-cp1251',
+		'kmod-nls-cp437',
+		'kmod-nls-cp775',
+		'kmod-nls-cp850',
+		'kmod-nls-cp852',
+		'kmod-nls-cp866',
+		'kmod-nls-iso8859-1',
+		'kmod-nls-iso8859-13',
+		'kmod-nls-iso8859-15',
+		'kmod-nls-iso8859-2',
+		'kmod-nls-koi8r',
+		'kmod-nls-utf8',
+		'kmod-usb-net',
+		'kmod-usb-net-asix',
+		'kmod-usb-net-asix-ax88179',
+		'kmod-usb-net-cdc-eem',
+		'kmod-usb-net-cdc-ether',
+		'kmod-usb-net-cdc-mbim',
+		'kmod-usb-net-cdc-ncm',
+		'kmod-usb-net-cdc-subset',
+		'kmod-usb-net-dm9601-ether',
+		'kmod-usb-net-hso',
+		'kmod-usb-net-huawei-cdc-ncm',
+		'kmod-usb-net-ipheth',
+		'kmod-usb-net-kalmia',
+		'kmod-usb-net-kaweth',
+		'kmod-usb-net-mcs7830',
+		'kmod-usb-net-pegasus',
+		'kmod-usb-net-qmi-wwan',
+		'kmod-usb-net-rndis',
+		'kmod-usb-net-rtl8150',
+		'kmod-usb-net-rtl8152',
+		'kmod-usb-net-sierrawireless',
+		'kmod-usb-net-smsc95xx',
+		'kmod-mii',
+		'kmod-nls-base',
+		'kmod-sky2',
+		'kmod-r8169',
+		'kmod-forcedeth',
+		'kmod-8139too',
+		'bash',
+		'tcpdump',
+		'vnstat',
+		'iperf',
+		'iperf3',
+		'socat',
+		'usbutils',
+		'kmod-usb-hid',
+		'ip-full',
+	}
+end
