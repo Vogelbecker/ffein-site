@@ -140,9 +140,9 @@ endif
 #                       opkg compare-versions "$1" '>>' "$2"
 #               to decide if a version is newer or not.
 
-DEFAULT_GLUON_RELEASE := 2023.0.1
+#DEFAULT_GLUON_RELEASE := 2023.0.1
 
-DEFAULT_GLUON_CHECKOUT := v2023.1
+#DEFAULT_GLUON_CHECKOUT := v2023.1
 
 ##      GLUON_RELEASE
 #               call make with custom GLUON_RELEASE flag, to use your own release version scheme.
@@ -152,7 +152,7 @@ DEFAULT_GLUON_CHECKOUT := v2023.1
 #                       gluon-ff%site_code%-23.42+5-%router_model%.bin
 
 # Allow overriding the release number from the command line
-GLUON_RELEASE ?= $(DEFAULT_GLUON_RELEASE)
+GLUON_RELEASE ?= $(GLUON_COMMIT)+$(shell git -C $(GLUON_SITEDIR) rev-list --count HEAD)
 
 # Default priority for updates.
 GLUON_PRIORITY ?= 0
@@ -166,7 +166,7 @@ GLUON_LANGS ?= en de
 # Select ath10k Firmware for adhoc
 GLUON_ATH10K_MESH ?= 11s
 
-GLUON_DEPRECATED ?= upgrade
+GLUON_DEPRECATED ?= full
 
 # Set default branch for building custom images
 GLUON_AUTOUPDATER_BRANCH ?= experimental
