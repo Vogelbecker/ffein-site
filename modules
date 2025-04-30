@@ -1,17 +1,17 @@
-GLUON_SITE_FEEDS="ssidchanger fflip ffmuc eulenfunk"
+GLUON_SITE_FEEDS='community ffac ffin'
 
-PACKAGES_SSIDCHANGER_REPO=https://github.com/freifunk-nord/gluon-ssid-changer.git
-PACKAGES_SSIDCHANGER_COMMIT=222b96a30259a03ca8ecdb173d9d326077a6efec
-PACKAGES_SSIDCHANGER_BRANCH=2018.1.x
+PACKAGES_COMMUNITY_REPO=https://github.com/freifunk-gluon/community-packages.git
+PACKAGES_COMMUNITY_BRANCH=master
+PACKAGES_COMMUNITY_COMMIT=19fc2d3851f3aad36a44076c2103797fa09ed9a6
 
-PACKAGES_FFLIP_REPO=https://github.com/freifunklippe/packages.git
-PACKAGES_FFLIP_COMMIT=cdaadcc89ca26810ee8ffd737fa5573da4843d09
-PACKAGES_FFLIP_BRANCH=master
+PACKAGES_FFAC_REPO=https://github.com/ffac/gluon-packages.git
+PACKAGES_FFAC_BRANCH=main
+PACKAGES_FFAC_COMMIT=c66e741cc08800e53887cf05c7b4e3dc9b8c84f6
+
+PACKAGES_FFIN_REPO=https://git.bingo-ev.de/freifunk/packages.git
+PACKAGES_FFIN_BRANCH=main
+PACKAGES_FFIN_COMMIT=dbc487d0ad07102030fa7a4c4b8128213b6c9c16
 
 PACKAGES_FFMUC_REPO=https://github.com/freifunkMUC/gluon-packages.git
 PACKAGES_FFMUC_COMMIT=403526c6881f62d7258292b9b6170dc4124c4078
 PACKAGES_FFMUC_BRANCH=main
-
-PACKAGES_EULENFUNK_REPO=https://github.com/ffac/eulenfunk-packages.git
-PACKAGES_EULENFUNK_COMMIT=25bdb8ef28531ab4ec6a978a5356c3c07518a826
-PACKAGES_EULENFUNK_BRANCH=v2019.1.x
