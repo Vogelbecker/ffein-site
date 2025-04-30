@@ -13,7 +13,6 @@ features({
 	'web-advanced',
 	'web-private-wifi',
 	'weeklyreboot',
-	'config-mode-domain-select',
 	'config-mode-geo-location',
 	})
 
