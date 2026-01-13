@@ -18,6 +18,7 @@ features({
 
 packages({
 	'ffac-ssid-changer',
+    'ff-mesh-vpn-tunneldigger',
 	'gluon-web-autoupdater',
 	'-gluon-config-mode-mesh-vpn',
 	'gluon-web-mesh-vpn-fastd',
