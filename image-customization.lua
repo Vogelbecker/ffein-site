@@ -1,6 +1,6 @@
 features({
 	'autoupdater',
-	'authorized-keys',
+	-- 'authorized-keys',
 	'ebtables-filter-multicast',
 	'ebtables-filter-ra-dhcp',
 	'ebtables-source-filter',
