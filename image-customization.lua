@@ -21,13 +21,12 @@ packages({
     'ff-mesh-vpn-tunneldigger',
 	'gluon-web-autoupdater',
 	'-gluon-config-mode-mesh-vpn',
-	'gluon-web-mesh-vpn-fastd',
+	-- 'gluon-web-mesh-vpn-fastd',
 })
 
 -- https://gluon.readthedocs.io/en/latest/dev/hardware.html#device-class-definition
 if not device_class('tiny') then
 	features({
-		'config-mode-geo-location-osm',
 		'wireless-encryption-wpa3',
 		'web-cellular',
 	})
