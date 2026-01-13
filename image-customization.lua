@@ -24,10 +24,6 @@ packages({
 	'gluon-web-mesh-vpn-fastd',
 })
 
-features({
-	'mesh-vpn-fastd-l2tp',
-})
-
 -- https://gluon.readthedocs.io/en/latest/dev/hardware.html#device-class-definition
 if not device_class('tiny') then
 	features({
