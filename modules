@@ -1,8 +1,8 @@
 GLUON_SITE_FEEDS='community ffac ffin eulenfunk'
 
 PACKAGES_COMMUNITY_REPO=https://github.com/freifunk-gluon/community-packages.git
-PACKAGES_COMMUNITY_BRANCH=master
-PACKAGES_COMMUNITY_COMMIT=19fc2d3851f3aad36a44076c2103797fa09ed9a6
+PACKAGES_COMMUNITY_BRANCH=main
+PACKAGES_COMMUNITY_COMMIT=0f6d8131376528f5d9ddc1f88e3ea2f679a51f04
 
 PACKAGES_FFAC_REPO=https://github.com/ffac/gluon-packages.git
 PACKAGES_FFAC_BRANCH=main
